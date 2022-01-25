@@ -11,18 +11,18 @@ blog_posts = {
 }
 
 # View that displays the blog landing page listing latest blog posts and some welcome text
-def index(request):
+def starting_page(request):
 
-    return render(request, "blog/index.html")
+    return render(request, "blog/starting_page.html")
 
 # View that lists all the blog posts
-def blog_list(request):
+def posts(request):
     posts = list(blog_posts.keys())
 
-    return render(request, "blog/blog_list.html", {
+    return render(request, "blog/posts.html", {
         "posts": posts,
     })
 
 # View that loads full blog post
-def view_blog_post(request, post):
+def single_post(request, post):
     pass
