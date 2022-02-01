@@ -19,7 +19,7 @@ def starting_page(request):
 def posts(request):
     posts = list(blog_posts.keys())
 
-    return render(request, "blog/posts.html", {
+    return render(request, "blog/all-posts.html", {
         "posts": posts,
     })
 
