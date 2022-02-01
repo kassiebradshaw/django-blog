@@ -24,5 +24,5 @@ def posts(request):
     })
 
 # View that loads full blog post
-def single_post(request, post):
-    pass
+def post_detail(request, slug):
+    return render(request, "blog/post_detail.html")
