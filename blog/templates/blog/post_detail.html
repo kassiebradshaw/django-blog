@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_title %}Post Title Goes Here{% endblock %}
+{% block page_title %}{{ post.title }}{% endblock %}
 
 {% block css_files %}
     <link rel="stylesheet" href="{% static "blog/post-detail.css" %}" />
@@ -9,28 +9,18 @@
 
 {% block content %}
     <section id="summary">
-        <h2>Post Title</h2>
+        <h2>{{ post.title }}</h2>
         <article>
-            <img src="{% static "blog/images/animalcrossing.jpg" %}" alt="Post Title" />
-            <address>By Kassie</address>
+            <img src="{% static "blog/images/"|add:post.image %}" alt="Post Title" />
+            <address>Author: {{ post.author }}</address>
             <div>
-                Last Updated on <time>January 31st</time>
+                Last Updated on <time>{{post.date| date:"d M Y"}}</time>
             </div>
         </article>
     </section>
 
     <main>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam, quae, quia debitis corrupti illo totam inventore aliquam maiores dolorum perspiciatis aspernatur aliquid quidem impedit hic eius, ipsa natus. Autem, explicabo.
-        </p>
-
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit distinctio possimus quaerat pariatur sit in quod natus dolores esse quis corrupti ullam repellendus nihil explicabo repellat voluptatum, aut, excepturi harum.
-        </p>
-
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem in eveniet, magni ratione porro doloribus tenetur inventore et quas, quidem, voluptate autem ipsam qui voluptatum ab dolor a molestias vero.
-        </p>
+        {{ post.content|linebreaks }}
     </main>
 
 {% endblock %}
