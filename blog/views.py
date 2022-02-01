@@ -134,12 +134,13 @@ def starting_page(request):
 
 # View that lists all the blog posts
 def posts(request):
-    posts = list(blog_posts.keys())
-
     return render(request, "blog/all_posts.html", {
-        "posts": posts,
+        "all_posts": blog_posts,
     })
 
 # View that loads full blog post
 def post_detail(request, slug):
-    return render(request, "blog/post_detail.html")
+    specific_post = next(post for post in blog_posts if post['slug'] == slug )
+    return render(request, "blog/post_detail.html", {
+        "post": specific_post,
+    })
