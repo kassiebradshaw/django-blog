@@ -16,7 +16,7 @@ My "All Posts" page
 
 ---
 
-Sample of full blog post
+Sample of full blog post page
 
 ![Blog detail page](blog/static/blog/images/postdetail.jpg)
 
