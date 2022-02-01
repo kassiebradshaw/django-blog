@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock %}
 
 {% block content %}
     <header id="main-navigation">
@@ -10,7 +15,7 @@
 
     <section id="welcome">
         <header>
-            <img src="" alt="Kassie - the author of this blog" />
+            <img src="{% static "blog/images/kbradshaw.jpg" %}" alt="Kassie - the author of this blog" />
             <h2>Kassie's Blog</h2>
         </header>
 
@@ -25,7 +30,7 @@
             <li>
                 <article class="post">
                     <a href="">
-                        <img src="" alt="My first post" />
+                        <img src="{% static "blog/images/animalcrossing.jpg" %}" alt="My first post" />
                         <div class="post__content">
                             <h3>My First Post</h3>
                             <p>Preview text goes here...</p>
@@ -37,7 +42,7 @@
     </section>
 
     <section id="about">
-        <h2>What I Do</h2>
+        <h2>A Little About Me</h2>
         <p>I'm a thinker, a maker, a helper.</p>
         <p>I love puzzles and dad jokes.</p>
     </section>
